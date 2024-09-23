@@ -1,0 +1,139 @@
+/* This is the stylesheet for navbar.css */
+
+.nav-container {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    background: rgb(43,62,101);
+    border-bottom: 0.05rem solid black;
+}
+
+.nav-container-left {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 4px;
+    /* background: orange; */
+    width: 25%;
+    padding: 0px 4px;
+}
+
+.nav-icon {
+    border-radius: 8px;
+    min-width: 48px;
+    height: 48px;
+}
+
+.nav-search {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #edf3f8;
+    padding: 2px 16px;
+    border-radius: 4px;
+    width: 50%;
+    transition: width .2s linear;
+}
+
+.nav-search:focus-within {
+    border: 2px solid black;
+    width: 100%;
+}
+
+.nav-search input {
+    border: 0;
+    outline: 0;
+    padding: 8px 10px;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+.nav-search input:focus {
+    width: 100%;
+}
+
+
+/* NAV CONTAINER CENTER */
+.nav-container-center li {
+    list-style-type: none;
+}
+
+.navbar-items {
+    display: flex;
+    flex-flow: row nowrap;
+    /* gap: 16px; */
+}
+
+.navbar-items a {
+    font-size: 12px;
+    color: white;
+    height: 100%;
+    text-decoration: none;
+    padding: 6px 16px;
+    opacity: 0.6;
+    transition: opacity .1s ease-in;
+}
+
+.navbar-items a:first-of-type {
+    opacity: 1;
+    border-bottom: 2px solid white;
+}
+
+.navbar-items a:hover {
+    opacity: 1;
+}
+
+/* NAV CONTAINER RIGHT */
+.nav-container-right {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border-left: 1px solid black;
+    padding: 0 16px;
+    gap: 24px;
+    color: white;
+    transition: opacity 7s ease-in;
+    cursor: pointer;
+}
+
+.for-business-text {
+    font-size: 12px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 4px;
+    color: white;
+}
+
+.premium-container {
+    font-size: 12px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 4px;
+    text-align: left;
+    color: white;
+}
+
+.orange-box {
+    display: block;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    /* background-color: orange; */
+    background: linear-gradient(45deg, orange 50%, #f9c982 50%);
+    line-height: normal;
+}
+
+.orange-box-small {
+    display: block;
+    border-radius: 4px;
+    width: 14px;
+    height: 14px;
+    /* background-color: orange; */
+    background: linear-gradient(45deg, orange 50%, #f9c982 50%);
+    line-height: normal;
+}
