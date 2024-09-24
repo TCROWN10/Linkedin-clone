@@ -1,4 +1,5 @@
 import "../styles/navbar.css";
+import 'boxicons'
 import image from './assets/Tobi.png'
 
 function Navbar() {

@@ -20,21 +20,21 @@ export const profileData = {
     postImpressions: 2243,
 };
 
-function ProfileCard({ profile }) {
+function ProfileCard({ profile, showImage=true, showBackground=true, showProfile=true, showBio=true }) {
     const data = profile || profileData; // Fallback to profileData if no profile prop is passed.
 
     return (
         <div className="profile-card-container max-w-60 bg-[rgb(149,15,96)  ] pt-6 rounded-lg border text-white hover:bg-[rgb(101,43,43)] cursor-pointer mb-5">
-            <div className="profile-bg-cover"></div>
+            {showBackground && <div className="profile-bg-cover"></div>}
             <div className="relative z-10 flex flex-row justify-center">
-                {data.dp}
+                {showImage && data.dp}
             </div>
             <div className="flex flex-col items-center text-center py-4">
                 <a href="/" className="profile-name text-base font-bold hover:underline">
-                    {data.name}
+                    {showProfile && data.name}
                 </a>
                 <div className="profile-bio text-xs text-white max-w-[70%]">
-                    {data.bio}
+                    {showBio && data.bio}
                 </div>
             </div>
             <div className="border-t py-4 font-semibold text-xs text-white">
