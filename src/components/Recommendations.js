@@ -8,8 +8,8 @@ export const recommendationData = [
         dp: <img
             src={image}
             alt="avatar"
-            width={80}
-            height={80}
+            width={50}
+            height={50}
             style={{ background: "navajowhite", borderRadius: "50%", border: "2px solid white" }}
         />,
         name: "Bolaji Oluwatobi Aka (TCROWN)",
@@ -19,8 +19,8 @@ export const recommendationData = [
         dp: <img
             src={ayoImage}
             alt="avatar"
-            width={80}
-            height={80}
+            width={50}
+            height={50}
             style={{ background: "navajowhite", borderRadius: "50%", border: "2px solid white" }}
         />,
         name: "Ayodeji (Isreal) Awosika",
@@ -30,8 +30,8 @@ export const recommendationData = [
         dp: <img
             src={jolahImage}
             alt="avatar"
-            width={80}
-            height={80}
+            width={50}
+            height={50}
             style={{ background: "navajowhite", borderRadius: "50%", border: "2px solid white" }}
         />,
         name: "Jolade Okunlade",
@@ -46,7 +46,7 @@ function RecommendationProfile({ dp, name, bio }) {
             <div className="flex flex-col items-start text-xs">
                 <div className="text-sm font-bold">{name}</div>
                 <div className="leading-normal">{truncateText(bio, 50)}</div>
-                <button className="border border-gray-800 px-4 py-2 mt-2 rounded-full font-bold text-md">Follow</button>
+                <button className="border border-white px-4 py-2 mt-2 rounded-full font-bold text-md">Follow</button>
             </div>
         </div>
     )

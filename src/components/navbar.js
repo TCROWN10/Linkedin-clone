@@ -1,8 +1,12 @@
+import React, { useState } from "react";
 import "../styles/navbar.css";
 import 'boxicons'
 import image from './assets/Tobi.png'
 
 function Navbar() {
+
+    const [activeIndex, setActiveIndex] = useState(0);
+
     const navLists = [
         {
             icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
@@ -35,6 +39,28 @@ function Navbar() {
             name: "Notifications"
         },
     ]
+
+    const handleNavClick = (index) => {
+        setActiveIndex(index);
+      };
+
+
+      const [searchQuery, setSearchQuery] = useState("");
+
+      // Handle input changes
+      const handleInputChange = (e) => {
+        setSearchQuery(e.target.value);
+      };
+    
+      // Handle search action (when user presses enter or submits)
+      const handleSearch = (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          console.log("Search for:", searchQuery);
+          // Perform the search logic here, such as fetching results or navigating to a search results page
+        }
+      };
+
     return (
         <div className="nav-container">
             {/* The left side of the navbar */}
@@ -43,7 +69,12 @@ function Navbar() {
                 <svg className="nav-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style={{ fill: "#0a66c2", transform: ";msFilter:;" }}><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"></path></svg>
                 <span className="nav-search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{ fill: "rgba(0, 0, 0, 1)", transform: ";msFilter:;" }}><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg>
-                    <input type="search" placeholder="Search" />
+                    <input type="search" 
+                    placeholder="Search"
+                    value={searchQuery} 
+                    onChange={handleInputChange} 
+                    onKeyDown={handleSearch}
+                    />
                 </span>
             </div>
 
@@ -52,7 +83,12 @@ function Navbar() {
                 <nav className="navbar-items">
                     {
                         navLists.map((eachNavList, index) => (
-                            <a href="/" key={index}>
+                            <a 
+                                href="/"
+                             key={index}
+                             onClick={() => handleNavClick(index)}
+                             className={index === activeIndex ? "active" : ""}
+                             >
                                 {eachNavList.icon}
                                 <div>{eachNavList.name}</div>
                             </a>
