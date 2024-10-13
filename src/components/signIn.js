@@ -46,10 +46,11 @@ const SignIn = () => {
         <input
           type='email'
           id='email'
+          name='email'
           className='w-full p-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
           placeholder='Email Address'
           value={formData.email}
-          onClick={handleChange}
+          onChange={handleChange}
           required
           
         />
@@ -61,10 +62,11 @@ const SignIn = () => {
         <input
           type='password'
           id='password'
+          name='password'
           className='w-full p-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
           placeholder='Password'
           value={formData.password}
-          onClick={handleChange}
+          onChange={handleChange}
           required
         />
 
@@ -93,7 +95,7 @@ const SignIn = () => {
           type='submit'
           className='w-full bg-[rgb(43,62,101)] text-white py-2 rounded-full font-bold hover:bg-blue-800'
         >
-          Agree & Continue
+            <Link to="/LandingPage">Agree & Continue</Link>
         </button>
       </form>
 
@@ -116,7 +118,6 @@ const SignIn = () => {
       </p>
 
       <span>
-      <Link to="/LandingPage">Landing Page</Link>
     </span>;
     </div>
   )
